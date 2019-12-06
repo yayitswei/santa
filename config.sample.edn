@@ -1,0 +1,12 @@
+{:send-to-elves? true
+ :send-to-reviewer? true
+ :elves [["Elf 1" "elf1@northpole.com"]
+         ["Elf 2" "elf2@northpole.com"]
+         ["Elf 3" "elf3@northpole.com"]
+         ["Elf 4" "elf4@northpole.com"]]
+ :email-config {:host "smtp.northpole.com" ;; postal config
+                :user "user"
+                :pass "password"
+                :ssl true}
+ :from "Secret Santa <secretsanta@northpole.com>"
+ :reviewer ["Reviewer" "reviewer@northpole.com"]}
