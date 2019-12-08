@@ -40,5 +40,8 @@
 (defn go! [config-file]
   (let [config (load-config config-file)
         pairs (match (:elves config))]
-    (when (:send-to-reviewer? config) (send-review-email! config pairs))
-    (when (:send-to-elves? config) (doseq [pair pairs] (send-email! config pair)))))
+    (when (:send-to-reviewer? config)
+      (send-review-email! config pairs))
+    (when (:send-to-elves? config)
+      (doseq [pair (shuffle pairs)]
+        (send-email! config pair)))))
